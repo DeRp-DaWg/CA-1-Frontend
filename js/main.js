@@ -19,6 +19,7 @@ function writePersons() {
       );
       const personRowsAsString = personRows.join("");
       document.getElementById("table__body").innerHTML = personRowsAsString;
+      document.getElementById("table__head").innerHTML = `<tr><th scope="col">Email</th><th scope="col">First Name</th><th scope="col">Last Name</th><th scope="col">Phone</th><th scope="col">Hobbies</th><th scope="col">Street Name</th><th scope="col">Street Additional Info</th></tr>`;
     })
     .catch((err) => {
       if (err.status) {
@@ -31,3 +32,7 @@ function writePersons() {
 }
 
 writePersons();
+
+document.getElementById("form").addEventListener("submit", (event) => {
+  event.preventDefault();
+});
